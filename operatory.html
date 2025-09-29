@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <title>Operatory w JS</title>
+</head>
+<body>
+    <h1>Operatory w JS</h1>
+    <script>
+        let a = 11;
+        let b = 3;
+        let suma = a + b;
+        let roznica = a - b;
+        let iloczyn = a * b;
+        let iloraz = a / b;
+        let modulo = a % b; // reszta z dzielenia
+        document.writeln(`Suma: ${suma}<br>`);
+        document.writeln(`Różnica: ${roznica}<br>`);
+        document.writeln(`Iloczyn: ${iloczyn}<br>`);
+        document.writeln(`Iloraz: ${iloraz}<br>`);
+        document.writeln(`Modulo: ${modulo}<br>`);
+        document.writeln("<hr>");
+
+        a = 8;
+        let nowaLiczba = ++a; // preinkrementacja
+        document.writeln(`Nowa liczba wynosi: ${nowaLiczba}<hr>`);
+        b = 7;
+        let nowaLiczba2 = b++; // postinkrementacja
+        document.writeln(`Nowa liczba wynosi: ${nowaLiczba2}<hr>`);
+        document.writeln(`Liczba b wynosi: ${b}<hr>`);
+        
+        a = 11;
+        let nowaLiczba3 = --a; // predekrementacja
+        document.writeln(`Nowa liczba wynosi: ${nowaLiczba3}<hr>`);
+        b = 4;
+        let nowaLiczba4 = b--; // postdekrementacja
+        document.writeln(`Nowa liczba wynosi: ${nowaLiczba4}<hr>`);
+        document.writeln(`Liczba b wynosi: ${b}<hr>`);
+
+</script>
+</body>
+</html>

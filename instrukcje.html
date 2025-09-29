@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <title>Instrukcje w JS</title>
+</head>
+<body>
+    <h1>Ćwiczenie 1</h1>
+    <p>Sprawdzanie znaku liczby</p>
+    <script>
+        /*
+        const input = prompt("Podaj liczbę:")
+        const liczba = parseInt(input)
+        let wynik
+        if (isNaN(liczba)){
+            wynik = "To nie jest liczba"
+        }else if (liczba>0){
+            wynik = `Liczba ${liczba} jest większa od zera`
+        } else if (liczba<0){
+            wynik = `Liczba ${liczba} jest mniejsza od zera`
+        } else {
+            wynik = `Liczba ${liczba} jest równa zero`
+        }
+        document.write(wynik)*/
+
+    </script>
+
+    <h1>Ćwiczenie 2</h1>
+    <p>Tłumaczenie oceny</p>
+    <script>
+        /*const ocena = prompt("Podaj ocenę (A,B,C,D lub E:)")
+        let opis;
+        switch (ocena) {
+            case "A": opis = "doskonała"; break
+            case "B": opis = "dobra"; break
+            case "C": opis = "zadowalająca"; break
+            case "D": opis = "słaba"; break
+            case "E": opis = "niedostateczna"; break
+            default: opis = "nieznana ocena"
+        }
+    </script>
+
+    <h1>Ćwiczenie 3</h1>
+    <p>Suma zakresu liczb</p>
+    <script>
+        const startInput = prompt("Podaj początek zakresu:")
+        const stopInput = prompt("Podaj koniec zakresu:")
+
+        const start = parseInt(startInput)
+        const stop = parseInt(stopInput)
+
+        let suma = 0;
+        let opis;
+
+        for (let i=start; i <= stop; i++){
+            suma = suma + i //suma += i
+        }
+        opis = `Suma liczb od ${start} do ${stop} wynosi ${suma}`
+        document.write(opis)
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Typy danych</title>
+    </head>
+    <body>
+        <h1>Typy danych w JS</h1>
+        <script>
+            let bokA =6;
+            let bokB =7;
+            let pole = bokA * bokB;
+            console.log("Pole prostokąta wynosi: " + pole);
+            document.writeln("Pole prostokąta o boku a: " + bokA + " i boku b: " + bokB + " wynosi: " + pole + "<br>");
+            document.writeln(`Pole prostokąta o boku a: ${bokA} i boku b: ${bokB} wynosi: ${pole} <br>`);
+            document.writeln("------------------------------------------" + "<br>");
+
+            let a = 12;
+            let b = 0o36; //liczba w systemie ósemkowym
+            let c = 0x1f; //liczba w systemie szesnastkowym
+            let d = 12.123e12; //notacja wykładnicza, naukowa
+            document.writeln(`a = ${a}, b = ${b}, c = ${c}, d = ${d}`);
+            document.writeln("<hr>");
+
+            a = 0.1;
+            b = 0.2;
+            c = a + b;
+            document.writeln(`a = ${a}, b = ${b}, c = ${c}<br>`);
+
+            let napis1 = 'Java';
+            let napis2 = "Script";
+            let napis3 = napis1 + "-" + napis2;
+            document.writeln(napis3);
+             
+        </script>
+    </body>
+</html>
