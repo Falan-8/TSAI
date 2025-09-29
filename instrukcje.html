@@ -37,7 +37,7 @@
             case "D": opis = "słaba"; break
             case "E": opis = "niedostateczna"; break
             default: opis = "nieznana ocena"
-        }
+        }*/
     </script>
 
     <h1>Ćwiczenie 3</h1>
@@ -51,13 +51,18 @@
 
         let suma = 0;
         let opis;
-
-        for (let i=start; i <= stop; i++){
-            suma = suma + i //suma += i
+        if(isNaN(start)||isNaN(stop)) {
+            opis="Błąd wprowadzania danych"
         }
-        opis = `Suma liczb od ${start} do ${stop} wynosi ${suma}`
+        else {
+            for (let i=start; i <= stop; i++){
+                suma = suma + i //suma += i
+            }
+            opis = `Suma liczb od ${start} do ${stop} wynosi ${suma}`
+        }
         document.write(opis)
         
+    
     </script>
 </body>
 </html>
