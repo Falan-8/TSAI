@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Funkcje cd</title>
+    </head>
+    <body>
+        <script>
+            function poleTr(a,h){
+                let pole = (a*h) / 2
+                return pole
+            }
+            function polePr(a,b){
+                let pole = a*b
+                return pole
+            }
+
+            bokA = 10
+            bokB = 5
+
+            podstawa = 2
+            wysokosc = 10
+
+            let poleCalk = poleTr(podstawa,wysokosc) + polePr(bokA,bokB)
+
+            document.write(`Powierzchnia działki wynosi: ${poleCalk} m<sup>2`)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <title>Funkcje cd</title>
+</head>
+<body>
+    <script>
+        function polePr(a,b){
+            let pole = a*b
+            document.write(`Pole prostokąta o bokach ${a} i ${b} wynosi: ${pole}`)
+        }
+        function polePr1(a,b){
+            let pole = a*b
+            return pole
+        }
+
+        let bokA = 45
+        let bokB = 50
+        
+        polePr(bokA,bokB)
+    </script>
+    <h1>Pole działki</h1>
+    <script>
+        document.write(`<p>Pole działki wynosi: ${polePr1(bokA,bokB)}</p>`)
+    </script>
+    
+</body>
+</html>
