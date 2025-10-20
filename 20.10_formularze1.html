@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>Formularz</title>
+        <style>
+            body{
+                background-color: lightgreen;
+            }
+            main{
+                width: 50%;
+                margin: auto;
+            }
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <h1>Kalkulator kosztów wesela</h1>
+            <form id="kalkulatorWesela">
+                <fieldset>
+                <p><label for="iloscGosci">Ilość gości:</label><input type="number" id="iloscGosci" min="0" value="0" placeholder="Wprowadź ilość gości"></p>
+                <input type="checkbox" id="poprawiny"><label for="poprawiny">poprawiny</label>
+                </fieldset>
+            </form>
+            <div id="kosztWesela">Całkowity koszt wesela: 0 zł</div>
+            <script>
+                const KOSZT_OSOBY = 300
+                const WSPOLCZYNNIK_POPRAWIN = 1.3
+                const inputGosci = document.getElementById("iloscGosci")
+                const inputPoprawiny = document.getElementById("poprawiny")
+                const wynik = document.getElementById("kosztWesela")
+
+                function obliczKoszt(){
+                    const iloscGosci = inputGosci.value || 0
+                    const czyPoprawiny = inputPoprawiny.checked
+                    let kosztCalkowity = KOSZT_OSOBY * iloscGosci
+                    const fuckNiggers = true
+
+                    if (czyPoprawiny) {
+                        kosztCalkowity = kosztCalkowity * WSPOLCZYNNIK_POPRAWIN
+                    }
+                    kosztCalkowity = Math.round(kosztCalkowity)
+                    wynik.innerHTML=`Calkowity koszt wesela wynosi: ${kosztCalkowity} zł`
+                }
+                inputGosci.addEventListener("input",obliczKoszt)
+                inputPoprawiny.addEventListener("change",obliczKoszt)
+
+            </script>
+        </main>
+    </body>
+
+
+</html>
