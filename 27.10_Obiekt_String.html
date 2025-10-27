@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>String</title>
+    </head>
+    <body>
+        <p id="napis"></p>
+        <p id="dlugosc"></p>
+        <p id="duze"></p>
+        <p id="male"></p>
+        <p id="wycinek"></p>
+
+        <script>
+            const outputNapis = document.getElementById("napis")
+            const outputDlugosc = document.getElementById("dlugosc")
+            const outputDuze = document.getElementById("duze")
+            const outputMale = document.getElementById("male")
+            const outputWycinek = document.getElementById("wycinek")
+
+            let napis = "Obiekty języka Java Script"
+            let dl = napis.length
+            outputNapis.innerHTML = napis
+            outputDlugosc.innerHTML = `Długość napisu to: ${dl}`
+        </script>
+    </body>
+</html>

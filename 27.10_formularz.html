@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>kW na KM</title>
+    </head>
+    <body>
+        <h1>Przeliczanie kW na KM</h1>
+        <hr>
+        <form>
+            <fieldset>
+                <label for="inputKW">Wprowadź moc w (kW):</label>
+                <input type="number" id="inputKW" value="0" min="0" step="any">
+                <button type="button" id="btnNaKM">Przelicz na KM</button>
+            </fieldset>
+        </form>
+        <p id="wynik">.......</p>
+        <script>
+            const inputKW = document.getElementById("inputKW")
+            const outputWynik = document.getElementById("wynik")
+            const btnNaKM = document.getElementById("btnNaKM")
+
+            function getNumberValue(){
+                const value = inputKW.valueAsNumber
+                if (isNaN(value) || !isFinite(value) || value < 0){
+                    return null
+                }
+                return value
+            }
+
+            function przeliczNaKM(){
+                const kW = getNumberValue()
+                let wynik = 1.35962 * kW
+                outputWynik.innerHTML = `Moc przeliczona na KM wynosi ${wynik}`
+            }
+
+
+
+
+
+
+            btnNaKM.addEventListener("click",przeliczNaKM)
+        </script>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <Title>Ćwiczenie</Title>
+    </head>
+    <body>
+        <form>
+            <fieldset>
+                <p><label for="imie">Wprowadź imie</label> <input type="text" id="imie">
+                <label for="wiek">Wprowadź wiek</label> <input type="number" id="wiek" min="0"></p>
+            </fieldset>
+            <p id="outputImie"></p>
+            <p id="outputWiek"></p>
+        </form>
+
+        <script>
+            const imie = document.getElementById("imie")
+            const wiek = document.getElementById("wiek")
+            const outputImie = document.getElementById("outputImie")
+            const outputWiek = document.getElementById("outputWiek")
+
+            function wypiszImie(){
+                outputImie.innerHTML = `Masz na imię ${imie.value}`
+            }
+            function wypiszWiek(){
+                outputWiek.innerHTML = `Masz: ${wiek.value} lat`
+            }
+
+            imie.addEventListener("blur", wypiszImie)
+            wiek.addEventListener("blur", wypiszWiek)
+
+        </script>
+    </body>
+</html>
