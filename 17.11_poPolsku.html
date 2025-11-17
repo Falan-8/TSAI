@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>Data po polsku</title>
+        <script>
+            const nazwaMiesiaca = []
+            const nazwaDnia = []
+
+            nazwaMiesiaca[0] = "styczeń"
+            nazwaMiesiaca[1] = "luty"
+            nazwaMiesiaca[2] = "marzec"
+            nazwaMiesiaca[3] = "kwiecień"
+            nazwaMiesiaca[4] = "maj"
+            nazwaMiesiaca[5] = "czerwiec"
+            nazwaMiesiaca[6] = "lipiec"
+            nazwaMiesiaca[7] = "sierpień"
+            nazwaMiesiaca[8] = "wrzesień"
+            nazwaMiesiaca[9] = "październik"
+            nazwaMiesiaca[10] = "listopad"
+            nazwaMiesiaca[11] = "grudzień"
+
+            nazwaDnia[0] = "niedziela"
+            nazwaDnia[1] = "poniedziałek"
+            nazwaDnia[2] = "wtorek"
+            nazwaDnia[3] = "środa"
+            nazwaDnia[4] = "czwartek"
+            nazwaDnia[5] = "piątek"
+            nazwaDnia[6] = "sobota"
+
+            function podajCzas(){
+                const dzisiaj = new Date()
+
+                let dzien = dzisiaj.getDate()
+                let miesiac = dzisiaj.getMonth()
+                let rok = dzisiaj.getFullYear()
+                let dzienTygodnia = dzisiaj.getDay()
+
+                document.getElementById("czas").innerHTML = nazwaDnia[dzienTygodnia] +", "+ dzien +" "+ nazwaMiesiaca[miesiac] +", "+ rok
+                setTimeout(podajCzas, 1000)
+            }
+
+        </script>
+    </head>
+    <body onload="podajCzas()">
+        <p id="czas"></p>
+    </body>
+</html>

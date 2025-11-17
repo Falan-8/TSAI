@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>Obiekt Date</title>
+    </head>
+    <body>
+        <p id="czas1">...</p>
+        <p id="czas2">...</p>
+        <p id="czas3">...</p>
+        <p id="czas4">...</p>
+
+        <script>
+            const outputCzas1 = document.getElementById("czas1")
+            const outputCzas2 = document.getElementById("czas2")
+            const outputCzas3 = document.getElementById("czas3")
+            const outputCzas4 = document.getElementById("czas4")
+
+            const teraz = new Date()
+
+            let data_1 = teraz.toString()
+            let data_2 = teraz.toGMTString()
+            let data_3 = teraz.toLocaleDateString()
+
+            outputCzas1.innerHTML = `Czas lokalny: ${data_1}`
+            outputCzas2.innerHTML = `Czas uniwersalny: ${data_2}`
+            outputCzas3.innerHTML = `Czas regionalny: ${data_3}`
+
+
+        </script>
+    </body>
+</html>

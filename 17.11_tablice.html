@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tablice</title>
+    </head>
+    <body>
+        <script>
+            const nazwaTablicy = []
+            const t1 = ['Anna', 'Adam', 'Czesław', 'Beata']
+            document.write(t1[3]+"<br>")
+            t1[3] = "Barbara"
+            document.write(t1[3]+"<br>")
+            t1.push('Józef') //dodaje na końcu tablicy
+            t1.push('Antonina')
+            document.write("<hr>")
+            for (let i = 0; i<t1.length;i++){
+                document.write(t1[i]+"<br>")
+            }
+            t1.unshift("Stanisław") // dodaje na początku tablicy
+            t1.unshift("Zbigniew")
+            document.write("<hr>")
+            for (let i = 0; i<t1.length;i++){
+                document.write(t1[i]+"<br>")
+            }
+            document.write("<hr>")
+            let skasowaneImie1 = t1.pop() //usuwa z końca
+            let skasowaneImie2 = t1.shift() //usuwa z początku
+            for (let i = 0; i<t1.length;i++){
+                document.write(t1[i]+"<br>")
+            }
+            document.write(`Skasowane imię 1: ${skasowaneImie1}<br>`)
+            document.write(`Skasowane imię 2: ${skasowaneImie2}<br>`)
+            document.write("<hr>")
+
+            for (const imie of t1){
+                document.write(imie + "<br>")
+            }
+        </script>
+        
+    </body>
+</html>

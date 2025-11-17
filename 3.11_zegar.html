@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+    <head>
+        <meta charset="UTF-8">
+        <title>Zegar na stronie</title>
+    </head>
+    <body>
+        <p id="zegar"></p>
+        <script>
+            const outputZegar = document.getElementById("zegar")
+            
+            let dzisiaj = new Date()
+            let dzien = dzisiaj.getDate()
+            let miesiac = dzisiaj.getMonth()
+            let rok = dzisiaj.getFullYear()
+
+            outputZegar.innerHTML = `${dzien}-${miesiac}-${rok}`
+
+        </script>
+    </body>
+</html>

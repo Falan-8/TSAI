@@ -10,6 +10,9 @@
         <p id="duze"></p>
         <p id="male"></p>
         <p id="wycinek"></p>
+        <p id="zawiera"></p>
+        <p id="wystąpienie"></p>
+        <p id="login"></p>
 
         <script>
             const outputNapis = document.getElementById("napis")
@@ -17,11 +20,32 @@
             const outputDuze = document.getElementById("duze")
             const outputMale = document.getElementById("male")
             const outputWycinek = document.getElementById("wycinek")
+            const outputZawiera = document.getElementById("zawiera")
+            const outputWystapienie = document.getElementById("wystąpienie")
+            const outputLogin = document.getElementById("login")
 
             let napis = "Obiekty języka Java Script"
             let dl = napis.length
             outputNapis.innerHTML = napis
             outputDlugosc.innerHTML = `Długość napisu to: ${dl}`
+            let duzeLitery = napis.toUpperCase()
+            let maleLitery = napis.toLowerCase()
+            outputDuze.innerHTML = `Duzy napis: ${duzeLitery}`
+
+            const czyZawiera = napis.includes("Java")
+            outputZawiera.innerHTML = `Zawiera szukane słowo: ${czyZawiera}`
+
+            const indeks = napis.indexOf("Java")
+            outputWystapienie.innerHTML = `Słowo zaczyna się od indeksu: ${indeks}`
+
+            let wycinek = napis.substring(15,18)
+            outputWycinek.innerHTML = `Wycinek to słowo: ${wycinek}`
+            wycinek = napis.substring(15,20)
+            outputWycinek.innerHTML = `Wycinek to słowo: ${wycinek}`
+
+            let login = "  Jasiu  "
+            outputLogin.innerHTML = login.trim()
+
         </script>
     </body>
 </html>

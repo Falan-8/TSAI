@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Zegar na stronie www</title>
+        <script>
+            function czas(){
+                const dzisiaj = new Date()
+
+                let dzien = dzisiaj.getDate()
+                let miesiac = dzisiaj.getMonth() + 1
+                let rok = dzisiaj.getFullYear()
+                let godzina = dzisiaj.getHours()
+                let minuta = dzisiaj.getMinutes()
+                let sekunda = dzisiaj.getSeconds()
+                if (sekunda <10){
+                    sekunda = "0" + sekunda
+                }
+
+                document.getElementById("zegar").innerHTML = dzien + "/" + miesiac + "/" + rok + " | " + godzina + ":" + minuta + ":" + sekunda
+                setTimeout(czas, 1000)
+            }
+        </script>
+    </head>
+    <body onload="czas()">
+        <p id="zegar"></p>
+        
+    </body>
+</html>
