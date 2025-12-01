@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <title>Zdarzenia</title>
+    <style>
+        body{
+            background-color: #8EF082;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h1{
+            color: #575470;
+        }
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+            border: 1px solid #575470;
+            background-color: #ffffff;
+        }
+        .paragraf-mysz {
+            color: black;
+            background-color: white;
+            font-size: 1em;
+            font-weight: normal;
+            padding: 10px;
+            border: 1px solid transparent;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        .paragraf-podswietlony{
+            color: red;
+            background-color: yellow;
+            font-size: 2em;
+            font-weight: bold;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rejestracja zdarzeń</h1>
+    <button id="button1" type="button">Przycisk 1</button><br><br>
+    <button id="button2" type="button">Przycisk 2</button><br><br>
+    <h1>Zdarzenia myszy onMouseOver onMouseOut</h1>
+    <p id="paragrafMysz" class="paragraf-mysz">Umieść kursor ponad tym napisem ..................</p>
+    <hr>
+
+    <script>
+
+        //Pobranie elementów DOM
+        const btn1 = document.getElementById("button1");
+        const btn2 = document.getElementById("button2");
+        const paragrafMysz = document.getElementById("paragrafMysz");
+
+        function b1(){
+            alert("Kliknięto przycisk 1");
+        }
+        btn1.addEventListener("click", b1);
+
+        //użycie funkcji strzałkowej
+        btn2.addEventListener("click", ()=>{
+            alert("Kliknięto przycisk 2");
+        });
+
+        //Mouse out
+        const zresetujParagraf = () => {
+            //Usunięcie klasy CSS
+            paragrafMysz.classList.remove("paragraf-podswietlony");
+        };
+
+        //Mouse over
+        const podswietlParagraf = () => {
+            //dodanie klasy CSS
+            paragrafMysz.classList.add("paragraf-podswietlony")
+        }
+        //Przypisanie zdarzeń
+        paragrafMysz.addEventListener("mouseover",podswietlParagraf)
+        paragrafMysz.addEventListener("mouseout",zresetujParagraf)
+    </script>
+</body>
+</html>
