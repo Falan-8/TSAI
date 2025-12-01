@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8" />
+    <title>Pobieranie elementów</title>
+
+    <style>
+        /* Styl bazowy dla nagłówka */
+        h1{
+            padding: 20px;
+            border: 1px solid #ccc;
+            background-color: white;
+            transition: background-color 0.4s ease, color 0.4s ease;
+        }
+        /*Klasa CSS, którą  będziemy dodawać i usuwać dynamicznie*/
+        .aktywny-naglowek {
+            background-color: #ff4dd4;
+            color: white;
+            
+        }
+    </style>
+</head>
+<body>
+    <h1 id="mojNaglowek">Kliknij, aby zastosować klasę CSS!</h1>
+    <button id="zmienTloPrzycisk">Zmień tło (Użycie klasy)</button>
+
+    <script>
+        
+        //Pobieranie elementów
+        const naglowek = document.getElementById("mojNaglowek");
+        const przycisk = document.getElementById("zmienTloPrzycisk");
+
+        if (naglowek&& przycisk) {
+
+            //Funkcja, która dodaje/usuwa klasę
+            function przelaczKlaseNaglowka(){
+                naglowek.classList.toggle("aktywny-naglowek");
+            }
+            przycisk.addEventListener("click", przelaczKlaseNaglowka);
+        }
+        else {
+            console.log("Nie znaleziono elementu DOM.");
+        }
+
+        
+    </script>
+</body>
+</html>
