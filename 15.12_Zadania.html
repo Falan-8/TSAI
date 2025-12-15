@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Zadania</title>
+    <link rel="stylesheet" href="15.12_style.css" />
+</head>
+<body>
+    <div class="zadanie-box">
+        <h2>Koszt wesela</h2>
+        <form id="formWesele">
+            <label for="goscie">Ilość cweli</label>
+            <input type="number" id="goscie" min="0" value="0">
+            <label><input type="checkbox" id="poprawiny">poprawiny</label>
+
+        </form>
+
+        <div id="wynikWesele" class="wynik">Całkowity koszt wesela: 0 zł</div>
+
+    </div>
+    <div class="zadanie-box">
+        <h2>2. Koszt dowozu pizzy</h2>
+        <form id="formPizza">
+            <label for="km">Ilość kilometrów:</label>
+            <input type="number" id="km" min="0" value="0">
+            <label><input type="checkbox" id="czdz">Jestem z Czechowic-Dziewic</label>
+        </form>
+
+        <div id="wynikPizza" class="wynik">Całkowity koszt dowozu: 0 zł</div>
+    </div>
+    <div class="zadanie-box">
+        <h2>3. Calc</h2>
+        <form id="formCalc">
+            <label for="a">Wartość A: </label>
+            <input type="number" id="a" step="any">
+            <label for="b">Wartość B: </label>
+            <input type="number" id="b" step="any">
+        </form>
+
+        <div class="kalkulator-przyciski">
+            <button onclick="obliczDzialanie('dodawanie')">Dodawanie</button>
+            <button onclick="obliczDzialanie('odejmowanie')">Odejmowanie</button>
+            <button onclick="obliczDzialanie('mnozenie')">Mnożenie</button>
+            <button onclick="obliczDzialanie('dzielenie')">Dzielenie</button>
+            <button onclick="obliczDzialanie('reszta')">Reszta z dzielenia</button>
+            <button onclick="obliczDzialanie('calkowite')">Dzielenie całkowite</button>
+        </div>
+        <div id="wynikKalkulator" class="wynik">Wynik działania: </div>
+    </div>
+
+    <script>
+    //=========================================
+    // Zadanie 3 - Calc (short for caluculator btw)
+    // 6 działań, walidacja pól
+    //=========================================
+
+
+        
+
+
+
+    //=========================================
+    // Zadanie 2 - Koszt dowozu pizzy
+    // Koszt: 2zł/km, Cz-Dz - 0 zł
+    //=========================================
+
+        const form2 = document.getElementById("formPizza")
+        function obliczPizza(){
+            const km = parseInt(document.getElementById("km").value) || 0
+            const czdz = document.getElementById("czdz").checked
+            const wynikPizza = document.getElementById("wynikPizza")
+            let kosztKm = 2
+            let kosztDowozu = 0
+            let komunikat = ""
+
+            kosztDowozu = kosztKm * km
+
+            if (czdz){
+                komunikat = "Dowieziemy Twoją pizzę za darmo"
+            }else{
+                komunikat = `Dowóz będzie kosztował ${kosztDowozu} zł`
+            }
+            wynikPizza.textContent = komunikat
+        }
+        form2.addEventListener('change', obliczPizza)
+
+    </script>
+    
+    <script>
+    //=========================================
+    // Zadanie 1 - Koszt wesela
+    // Koszt: 300zł/os, poprawiny +30%
+    //=========================================
+
+        const form1 = document.getElementById('formWesele');
+        function obliczWesele(){
+            const wynik = document.getElementById('wynikWesele');
+            const goscie = parseInt(document.getElementById('goscie').value) || 0;
+            const poprawiny = document.getElementById('poprawiny').checked;
+            const kosztOsoba = 300;
+            const rabatPoprawiny = 0.30;
+            //obliczanie podstawowego kosztu
+            let kosztCalkowity = goscie * kosztOsoba;
+            //dodanie kosztu poprawin
+            if(poprawiny){
+                kosztCalkowity += kosztCalkowity * rabatPoprawiny;
+            }
+            wynik.textContent = `Całkowity koszt wesela: ${kosztCalkowity.toFixed(2)} zł`;
+        }
+        //Podpięcie zdarzenia 'change'
+
+        form1.addEventListener('change', obliczWesele);
+
+    </script>
+
+</body>
+</html>
